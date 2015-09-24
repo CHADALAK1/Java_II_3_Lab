@@ -5,9 +5,12 @@
 
 public class Toppings
 {
-    public Toppings()
+    public String Name;
+    public double Price;
+    public Toppings(String N, double P)
     {
-        
+        Name = N;
+        Price = P;
     }
 
 }
