@@ -8,6 +8,7 @@ public class PizzaOrder extends JFrame
 {
     private JPanel panel;
     private JLabel titleLabel;
+    private JCheckBox cbPepperoni;
     private final int WINDOW_WIDTH = 350;
     private final int WINDOW_HEIGHT = 250;
 
@@ -33,8 +34,11 @@ public class PizzaOrder extends JFrame
     {
         titleLabel = new JLabel("Hello There");
 
+        cbPepperoni = new JCheckBox("Pepperoni");
+
         panel = new JPanel();
 
         panel.add(titleLabel);
+        panel.add(cbPepperoni);
     }
 }
