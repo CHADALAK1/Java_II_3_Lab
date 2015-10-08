@@ -29,10 +29,10 @@ public class PizzaOrder extends JFrame
 
     /*
     Create Arrays of the following:
-    Array of JCheckBoxes
+    Array of JCheckBoxes(Initialize the size)
     Array of Toppings(Initialize from start)
      */
-    private JCheckBox[] cbArray;
+    private JCheckBox[] cbArray = new JCheckBox[14];
     private Toppings[] cbToppings = new Toppings[] {Anchovies, Bacon, BuffaloChicken, CanadianBacon, ExtraCheese, Mushrooms, OlivesG, Onions, PeppersG, Pepperoni, Pineapple, Sausage, Spinach};
     private final int WINDOW_WIDTH = 350;
     private final int WINDOW_HEIGHT = 250;
@@ -50,8 +50,6 @@ public class PizzaOrder extends JFrame
 
         add(panel);
 
-        //derp
-
         setVisible(true);
     }
 
@@ -63,12 +61,17 @@ public class PizzaOrder extends JFrame
 
         panel.add(titleLabel);
 
-        /* Broken Code */
-        for(int i=0; i<14; i++)
+        for(int i=0; i<13; i++)
         {
-            cbArray[i] = new JCheckBox(cbToppings[i].getName());
-            panel.add(cbArray[i]);
+            try
+            {
+                cbArray[i] = new JCheckBox(cbToppings[i].getName());
+                panel.add(cbArray[i]);
+            }
+            catch(NullPointerException E)
+            {
+                System.out.println("OUCH");
+            }
         }
-        /* */
     }
 }
