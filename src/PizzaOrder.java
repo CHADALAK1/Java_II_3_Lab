@@ -8,9 +8,10 @@ public class PizzaOrder extends JFrame
 {
     private JPanel panel;
     private JLabel titleLabel;
+    private JButton calcButton;
 
     /*
-    Initialize the Toppings names and prices
+    Create and Initialize the Toppings names and prices
      */
     private Toppings Anchovies = new Toppings("Anchovies", 0.75);
     private Toppings Bacon = new Toppings("Bacon", 0.95);
@@ -73,5 +74,9 @@ public class PizzaOrder extends JFrame
                 System.out.println("OUCH");
             }
         }
+
+        calcButton = new JButton("Total");
+
+        panel.add(calcButton);
     }
 }
