@@ -5,12 +5,27 @@
 
 public class Toppings
 {
-    public String Name;
-    public double Price;
+    private String Name;
+    private double Price;
+    /*
+    Constructor
+    @param N : Name of Topping
+    @param P : Price of Topping
+     */
     public Toppings(String N, double P)
     {
         Name = N;
         Price = P;
+    }
+
+    public String getName()
+    {
+        return Name;
+    }
+
+    public double getPrice()
+    {
+        return Price;
     }
 
 }

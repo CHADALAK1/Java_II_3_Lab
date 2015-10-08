@@ -8,7 +8,32 @@ public class PizzaOrder extends JFrame
 {
     private JPanel panel;
     private JLabel titleLabel;
-    private JCheckBox cbPepperoni;
+
+    /*
+    Initialize the Toppings names and prices
+     */
+    private Toppings Anchovies = new Toppings("Anchovies", 0.75);
+    private Toppings Bacon = new Toppings("Bacon", 0.95);
+    private Toppings BuffaloChicken = new Toppings("Buffalo Chicken", 1.00);
+    private Toppings CanadianBacon = new Toppings("Canadian Bacon", 1.00);
+    private Toppings ExtraCheese = new Toppings("Extra Cheese", 0.65);
+    private Toppings Mushrooms = new Toppings("Mushrooms", 0.55);
+    private Toppings OlivesG = new Toppings("Olives{Green}", 0.60);
+    private Toppings Onions = new Toppings("Onions", 0.45);
+    private Toppings PeppersG = new Toppings("Peppers{Green}", 0.50);
+    private Toppings Pepperoni = new Toppings("Pepperoni", 1.00);
+    private Toppings Pineapple = new Toppings("Pineapple", 0.60);
+    private Toppings Sausage = new Toppings("Sausage", 1.10);
+    private Toppings Spinach = new Toppings("Spinach", 0.50);
+    /* */
+
+    /*
+    Create Arrays of the following:
+    Array of JCheckBoxes
+    Array of Toppings(Initialize from start)
+     */
+    private JCheckBox[] cbArray;
+    private Toppings[] cbToppings = new Toppings[] {Anchovies, Bacon, BuffaloChicken, CanadianBacon, ExtraCheese, Mushrooms, OlivesG, Onions, PeppersG, Pepperoni, Pineapple, Sausage, Spinach};
     private final int WINDOW_WIDTH = 350;
     private final int WINDOW_HEIGHT = 250;
 
@@ -34,11 +59,16 @@ public class PizzaOrder extends JFrame
     {
         titleLabel = new JLabel("Hello There");
 
-        cbPepperoni = new JCheckBox("Pepperoni");
-
         panel = new JPanel();
 
         panel.add(titleLabel);
-        panel.add(cbPepperoni);
+
+        /* Broken Code */
+        for(int i=0; i<14; i++)
+        {
+            cbArray[i] = new JCheckBox(cbToppings[i].getName());
+            panel.add(cbArray[i]);
+        }
+        /* */
     }
 }
