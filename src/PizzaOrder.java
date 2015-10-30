@@ -2,6 +2,7 @@
  * Created by Chad Reddick on 9/24/2015.
  */
 import javax.swing.*;
+import java.awt.event.*;
 
 
 public class PizzaOrder extends JFrame
@@ -9,6 +10,7 @@ public class PizzaOrder extends JFrame
     private JPanel panel;
     private JLabel titleLabel;
     private JButton calcButton;
+    private double totalTransaction = 0;
 
     /*
     Create and Initialize the Toppings names and prices
@@ -76,7 +78,30 @@ public class PizzaOrder extends JFrame
         }
 
         calcButton = new JButton("Total");
+        calcButton.addActionListener(new CalcButtonListener());
 
         panel.add(calcButton);
+    }
+
+
+    //Total Button action listener so the button does something
+    private class CalcButtonListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            for(int i = 0; i < 13; i++)
+            {
+                if(cbArray[i].isSelected())
+                {
+                    totalTransaction += cbToppings[i].getPrice();
+                }
+                else
+                {
+
+                }
+            }
+
+            System.out.println(totalTransaction);
+        }
     }
 }
